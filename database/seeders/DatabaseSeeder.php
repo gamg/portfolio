@@ -14,11 +14,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+         \App\Models\User::factory()->create([
+             'name' => 'Gustavo',
+             'email' => 'adolfz10@gmail.com',
+         ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+         \App\Models\Navitem::factory()->create([
+             'label' => 'Hello',
+             'link'  =>  '#'
+         ]);
+
+        \App\Models\Navitem::factory()->create([
+            'label' => 'Projects',
+            'link'  =>  '#'
+        ]);
+
+        \App\Models\Navitem::factory()->create([
+            'label' => 'Contact me',
+            'link'  =>  '#'
+        ]);
     }
 }
