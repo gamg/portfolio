@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire\Navigation;
 
+use App\Http\Livewire\Traits\Notification;
 use App\Models\Navitem;
 use Livewire\Component;
 
 class Item extends Component
 {
+    use Notification;
     public Navitem $item;
 
     protected $rules = [
@@ -25,6 +27,7 @@ class Item extends Component
         $this->item->save();
         $this->emitTo('navigation.navigation','itemAdded');
         $this->mount();
+        $this->notify('Item created successfully!');
     }
 
     public function render()

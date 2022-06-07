@@ -1,6 +1,9 @@
 @props([
     'addNewItem' => false,
     'items'      => null,
+    'imageFile'  => null,
+    'imageUrl'  => null,
+    'cvUrl'  => null,
 ])
 <div x-data="{ open: @entangle('openSlideover').defer }"
      @keydown.window.escape="open = false"
@@ -27,8 +30,10 @@
                         <div class="relative mt-6 flex-1 px-4 sm:px-6">
                             @if($addNewItem)
                                 <livewire:navigation.item/>
-                            @else
+                            @elseif($items)
                                 <x-forms.edit-items :items="$items"/>
+                            @else
+                                <x-forms.edit-hero :imageFile="$imageFile" :imageUrl="$imageUrl" :cvUrl="$cvUrl"/>
                             @endif
                         </div>
                     </div>

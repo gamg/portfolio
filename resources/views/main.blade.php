@@ -10,33 +10,10 @@
 
             <livewire:navigation.navigation />
 
-            <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                <div class="sm:text-center lg:text-left">
-                    <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
-                        <span class="block xl:inline">Data to enrich your</span>
-                        <!-- space -->
-                        <span class="block text-blue xl:inline">online business</span>
-                    </h1>
-                    <p class="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
-                    </p>
-                    <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                        <div class="rounded-md shadow">
-                            <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-500 hover:bg-red-400 md:py-4 md:text-lg md:px-10">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                </svg>
-                                Download CV
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </main>
+           <livewire:hero.info/>
         </div>
     </div>
-    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img class="h-80 w-full object-cover sm:h-96 md:h-full lg:w-full lg:h-full" src="{{ asset('/img/img-hero-min.jpg') }}" alt="Dafault Hero img">
-    </div>
+    <livewire:hero.image/>
 </div>
 
 <!-- Projects -->
@@ -47,7 +24,7 @@
             <div class="mt-6 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-6">
                 <div class="group relative">
                     <div class="relative w-full h-80 bg-white rounded-lg overflow-hidden group-hover:opacity-75 sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
-                        <img src="{{ asset('/img/default-img-project-min.jpg') }}" alt="Default title" class="w-full h-full object-center object-cover">
+                        <img src="{{ asset('/projects/default-img-project.jpg') }}" alt="Default title" class="w-full h-full object-center object-cover">
                     </div>
                     <h3 class="mt-6 text-sm text-gray-500">
                         <a href="#">

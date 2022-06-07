@@ -11,10 +11,10 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Aldrich" media="all">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}?gjhghg">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}?ss">
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/app.js') }}?sxs" defer></script>
         <script src="https://cdn.tailwindcss.com"></script>
         @livewireStyles
     </head>
@@ -22,6 +22,10 @@
         <div style="font-family: Aldrich">
             {{ $slot }}
         </div>
+
         @livewireScripts
+
+        <!-- Sweetalert 2 -->
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </body>
 </html>

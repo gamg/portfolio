@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Http\Livewire\Navigation\Navigation;
 use App\Http\Livewire\Navigation\Item;
 use App\Models\Navitem;
+use App\Models\PersonalInformation;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
@@ -18,6 +19,9 @@ class NavigationTest extends TestCase
     /** @test  */
     public function test_navigation_component_can_be_rendered()
     {
+        // Load data is needed for this another component, because is rendered in the main page
+        PersonalInformation::factory()->create();
+
         $this->get('/')->assertStatus(200)->assertSeeLivewire('navigation.navigation');
     }
 
@@ -78,15 +82,7 @@ class NavigationTest extends TestCase
         $user = User::factory()->create();
 
         // Firstly, I save a couple of items
-        Livewire::actingAs($user)->test(Item::class)
-            ->set('item.label', 'Work')
-            ->set('item.link', '#projects')
-            ->call('save');
-
-        Livewire::actingAs($user)->test(Item::class)
-            ->set('item.label', 'Contact')
-            ->set('item.link', '#contact')
-            ->call('save');
+        $items = Navitem::factory(2)->create();
 
         // and then, I edit those items
         Livewire::actingAs($user)->test(Navigation::class)
@@ -96,10 +92,8 @@ class NavigationTest extends TestCase
             ->set('items.1.link', '#get-in-touch')
             ->call('edit');
 
-        $itemsWithNewData = Navitem::get();
-
-        $this->assertDatabaseHas('navitems', ['id' => $itemsWithNewData->first()->id, 'label' => 'My Projects', 'link' => '#super-projects']);
-        $this->assertDatabaseHas('navitems', ['id' => $itemsWithNewData->last()->id, 'label' => 'Get in touch', 'link' => '#get-in-touch']);
+        $this->assertDatabaseHas('navitems', ['id' => $items->first()->id, 'label' => 'My Projects', 'link' => '#super-projects']);
+        $this->assertDatabaseHas('navitems', ['id' => $items->last()->id, 'label' => 'Get in touch', 'link' => '#get-in-touch']);
     }
 
     /** @test  */
