@@ -6,7 +6,7 @@
                     <div class="flex items-center justify-between w-full md:w-auto">
                         <a href="#">
                             <span class="sr-only">Workflow</span>
-                            <img alt="Workflow" class="h-10 w-auto sm:h-12" src="{{ asset('/img/coding.png') }}">
+                            <img alt="Workflow" class="h-10 w-auto sm:h-12" src="{{ asset('/hero/coding.png') }}">
                         </a>
                         <div class="-mr-2 flex items-center md:hidden">
                             <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" @click="open = !open" @mousedown="if (open) $event.preventDefault()" aria-expanded="false" :aria-expanded="open.toString()">
@@ -31,7 +31,7 @@
             <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                 <div class="px-5 pt-4 flex items-center justify-between">
                     <div>
-                        <img class="h-8 w-auto" src="{{ asset('/img/coding.png') }}" alt="Logo">
+                        <img class="h-8 w-auto" src="{{ asset('/hero/coding.png') }}" alt="Logo">
                     </div>
                     <div class="-mr-2">
                         <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" @click="open = !open">

@@ -2,14 +2,17 @@
 
 namespace App\Http\Livewire\Navigation;
 
+use App\Http\Livewire\Traits\Notification;
+use App\Http\Livewire\Traits\Slideover;
 use App\Models\Navitem;
 use Livewire\Component;
 
 class Navigation extends Component
 {
+    use Slideover;
+    use Notification;
+
     public $items;
-    public $openSlideover = false;
-    public $addNewItem = false;
 
     protected $listeners = ['itemAdded' => 'updateDataAfterAddItem'];
 
@@ -32,12 +35,7 @@ class Navigation extends Component
         }
 
         $this->reset('openSlideover');
-    }
-
-    public function openSlide($addNewItem = false)
-    {
-        $this->addNewItem = $addNewItem;
-        $this->openSlideover = true;
+        $this->notify('Menu items updated successfully!');
     }
 
     public function updateDataAfterAddItem()

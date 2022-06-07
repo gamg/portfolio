@@ -21,17 +21,25 @@ class DatabaseSeeder extends Seeder
 
          \App\Models\Navitem::factory()->create([
              'label' => 'Hello',
-             'link'  =>  '#'
+             'link'  =>  '#hello'
          ]);
 
         \App\Models\Navitem::factory()->create([
             'label' => 'Projects',
-            'link'  =>  '#'
+            'link'  =>  '#projects'
         ]);
 
         \App\Models\Navitem::factory()->create([
             'label' => 'Contact me',
-            'link'  =>  '#'
+            'link'  =>  '#contact-me'
+        ]);
+
+        \App\Models\PersonalInformation::factory()->create([
+            'title' => 'Gustavo Meza',
+            'description' => 'Desarrollador web Laravel PHP..........',
+            'cv' => null,
+            'image' => null,
+            'email' => 'adolfz10@gmail.com',
         ]);
     }
 }
