@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}?ss">
 
         <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}?sxs" defer></script>
+        <script src="{{ asset('js/app.js') }}?cvbb" defer></script>
         <script src="https://cdn.tailwindcss.com"></script>
         @livewireStyles
     </head>

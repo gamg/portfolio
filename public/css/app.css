@@ -809,6 +809,9 @@ select {
 .w-4 {
   width: 1rem;
 }
+.w-0 {
+  width: 0px;
+}
 .w-24 {
   width: 6rem;
 }

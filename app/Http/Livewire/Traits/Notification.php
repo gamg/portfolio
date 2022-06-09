@@ -4,8 +4,8 @@ namespace App\Http\Livewire\Traits;
 
 trait Notification
 {
-    public function notify($message = '')
+    public function notify($message = '', $event = 'notify')
     {
-        $this->dispatchBrowserEvent('notify', ['message' => $message]);
+        $this->dispatchBrowserEvent($event, ['message' => $message]);
     }
 }
