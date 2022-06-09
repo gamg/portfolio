@@ -12,9 +12,9 @@ class Navigation extends Component
     use Slideover;
     use Notification;
 
-    public $items;
+    public $items = null;
 
-    protected $listeners = ['itemAdded' => 'updateDataAfterAddItem'];
+    protected $listeners = ['itemAdded' => 'updateDataAfterAddItem', 'deleteItem'];
 
     protected $rules = [
         'items.*.label' => 'required|max:20',
@@ -24,6 +24,12 @@ class Navigation extends Component
     public function mount()
     {
         $this->items = Navitem::all();
+    }
+
+    public function updateDataAfterAddItem()
+    {
+        $this->mount();
+        $this->reset('openSlideover');
     }
 
     public function edit()
@@ -38,10 +44,11 @@ class Navigation extends Component
         $this->notify('Menu items updated successfully!');
     }
 
-    public function updateDataAfterAddItem()
+    public function deleteItem(Navitem $item)
     {
+        $item->delete();
         $this->mount();
-        $this->reset('openSlideover');
+        $this->notify('Menu item has been deleted.', 'deleteMessage');
     }
 
     public function render()

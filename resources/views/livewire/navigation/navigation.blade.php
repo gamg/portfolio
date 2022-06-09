@@ -49,7 +49,6 @@
             </div>
         </div>
     </div>
-
     <x-modals.slideover :addNewItem="$addNewItem" :items="$items" />
 </section>
 

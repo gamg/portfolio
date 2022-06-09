@@ -97,6 +97,18 @@ class NavigationTest extends TestCase
     }
 
     /** @test  */
+    public function test_admin_can_delete_a_item()
+    {
+        $user = User::factory()->create();
+        $item = Navitem::factory()->create();
+
+        Livewire::actingAs($user)->test(Navigation::class)
+            ->call('deleteItem', $item);
+
+        $this->assertDatabaseMissing('navitems', ['id' => $item->id]);
+    }
+
+    /** @test  */
     public function test_label_is_required()
     {
         Livewire::test(Item::class)
