@@ -20,9 +20,6 @@ class HeroTest extends TestCase
     /** @test  */
     public function test_hero_info_component_can_be_rendered()
     {
-        //Load data is needed for this component
-        PersonalInformation::factory()->create();
-
         $this->get('/')->assertStatus(200)->assertSeeLivewire('hero.info');
     }
 
