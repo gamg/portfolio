@@ -18,15 +18,15 @@
                     @error("items.$index.link")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
                 </div>
                 <div class="mt-3 w-0">
-                    <a href="#" @click.prevent="$dispatch('deleteit', { eventName: 'deleteItem', id: {{ $item->id }} })" class="font-medium text-sm text-red-600 hover:text-red-400" title="Delete">
+                    <x-actions.action @click.prevent="$dispatch('deleteit', { eventName: 'deleteItem', id: {{ $item->id }} })" title="Delete" class="text-red-600 hover:text-red-400">
                         <x-icons.delete/>
-                    </a>
+                    </x-actions.action>
                 </div>
             </section>
         @empty
-            <h3>There are no items to show</h3>
+            <h3>There are no items to show!</h3>
         @endforelse
-        
+
         @if($items->count())
             <div class="mt-4">
                 <x-button>Update</x-button>

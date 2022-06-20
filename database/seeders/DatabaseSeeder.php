@@ -36,10 +36,12 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\PersonalInformation::factory()->create([
             'title' => 'Gustavo Meza',
-            'description' => 'Desarrollador web Laravel PHP..........',
+            'description' => 'Web Developer, Laravel PHP blablabla ..........',
             'cv' => null,
             'image' => null,
             'email' => 'adolfz10@gmail.com',
         ]);
+
+        \App\Models\Project::factory(3)->create();
     }
 }

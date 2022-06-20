@@ -148,8 +148,13 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'items.*.label' => [
+            'required' => 'The label of this item is required.',
+            'max' => 'The label of this item must not have more than :max characters.',
+        ],
+        'items.*.link' => [
+            'required' => 'The link of this item is required.',
+            'max' => 'The link of this item must not have more than :max characters.',
         ],
     ],
 
@@ -165,5 +170,4 @@ return [
     */
 
     'attributes' => [],
-
 ];

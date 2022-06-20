@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Image extends Component
 {
-    private $info;
+    private PersonalInformation $info;
 
     protected $listeners = ['heroImageUpdated' => 'mount'];
 

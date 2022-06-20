@@ -19,9 +19,6 @@ class NavigationTest extends TestCase
     /** @test  */
     public function test_navigation_component_can_be_rendered()
     {
-        // Load data is needed for this another component, because is rendered in the main page
-        PersonalInformation::factory()->create();
-
         $this->get('/')->assertStatus(200)->assertSeeLivewire('navigation.navigation');
     }
 

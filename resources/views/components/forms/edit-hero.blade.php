@@ -1,8 +1,3 @@
-@props([
-    'imageFile' => null,
-    'imageUrl' => null,
-    'cvUrl'  => null,
-])
 <div class="w-full sm:max-w-md px-6 py-4">
     <form wire:submit.prevent="edit">
         <div>
@@ -23,7 +18,7 @@
             <x-inputs.label for="cv" value="CV"/>
 
             <x-inputs.file wire:model="cvFile" id="cv" class="block mt-1 w-full" type="file"/>
-            <a href="{{ $cvUrl }}" class="text-gray-400 text-sm hover:text-gray-700" target="_blank">Current File</a>
+            <a href="{{ $info->cvUrl }}" class="text-gray-400 text-sm hover:text-gray-700" target="_blank">Current File</a>
 
             @error("cvFile")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
@@ -32,7 +27,7 @@
 
             <x-inputs.img wire:model="imageFile" id="image">
                 <span class="w-24 rounded-lg overflow-hidden bg-gray-100">
-                    <img src="{{ $imageFile ? $imageFile->temporaryUrl() : $imageUrl }}" alt="Hero Image">
+                    <img src="{{ $imageFile ? $imageFile->temporaryUrl() : $info->imageUrl }}" alt="Hero Image">
                 </span>
             </x-inputs.img>
 
