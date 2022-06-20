@@ -1,10 +1,3 @@
-@props([
-    'addNewItem' => false,
-    'items'      => null,
-    'imageFile'  => null,
-    'imageUrl'  => null,
-    'cvUrl'  => null,
-])
 <div x-data="{ open: @entangle('openSlideover').defer }"
      @keydown.window.escape="open = false"
      x-show="open" class="relative z-10" aria-labelledby="slide-over-title" x-ref="dialog" aria-modal="true">
@@ -25,16 +18,10 @@
                     </div>
                     <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
                         <div class="px-4 sm:px-6">
-                            <h2 class="text-lg font-medium text-gray-900" id="slide-over-title"> Panel title </h2>
+                            <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Panel</h2>
                         </div>
                         <div class="relative mt-6 flex-1 px-4 sm:px-6">
-                            @if($addNewItem)
-                                <livewire:navigation.item/>
-                            @elseif($items)
-                                <x-forms.edit-items :items="$items"/>
-                            @else
-                                <x-forms.edit-hero :imageFile="$imageFile" :imageUrl="$imageUrl" :cvUrl="$cvUrl"/>
-                            @endif
+                            {{ $slot }}
                         </div>
                     </div>
                 </div>

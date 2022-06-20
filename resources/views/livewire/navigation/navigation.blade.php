@@ -22,7 +22,12 @@
                     <x-navigation.links class="text-gray-200 hover:text-red-300" :items="$items" />
                 </div>
                 <div class="hidden md:flex items-center justify-between space-x-2 ml-4 pb-1">
-                    <x-actions.nav class="text-yellow-300 hover:text-blue-300"/>
+                    <x-actions.action wire:click.prevent="openSlide" title="Edit" class="text-yellow-300 hover:text-blue-300">
+                        <x-icons.edit/>
+                    </x-actions.action>
+                    <x-actions.action wire:click.prevent="openSlide(true)" title="New" class="text-yellow-300 hover:text-blue-300">
+                        <x-icons.add/>
+                    </x-actions.action>
                 </div>
             </nav>
         </div>
@@ -44,11 +49,23 @@
                 </div>
                 <div class="px-2 pt-2 pb-3 space-y-1">
                     <x-navigation.links class="block px-3 py-2 rounded-md text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50" extraStyles="block px-3 py-2 rounded-md text-base hover:bg-gray-50" :items="$items"/>
-                    <x-actions.nav class="block px-2 text-yellow-500 hover:text-blue-500"/>
+                    <x-actions.action wire:click.prevent="openSlide" title="Edit" class="block px-2 text-yellow-500 hover:text-blue-500">
+                        <x-icons.edit/>
+                    </x-actions.action>
+                    <x-actions.action wire:click.prevent="openSlide(true)" title="New" class="block px-2 text-yellow-500 hover:text-blue-500">
+                        <x-icons.add/>
+                    </x-actions.action>
                 </div>
             </div>
         </div>
     </div>
-    <x-modals.slideover :addNewItem="$addNewItem" :items="$items" />
+
+    <x-modals.slideover>
+        @if($addNewItem)
+            <livewire:navigation.item/>
+        @else($items)
+            <x-forms.edit-items :items="$items"/>
+        @endif
+    </x-modals.slideover>
 </section>
 

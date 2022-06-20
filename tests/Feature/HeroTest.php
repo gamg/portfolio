@@ -82,7 +82,6 @@ class HeroTest extends TestCase
         Storage::fake('hero');
         Storage::fake('cv');
 
-        // and then, I edit those items
         Livewire::actingAs($user)->test(Info::class)
             ->set('info.title', 'Adolfo Gutierrez')
             ->set('info.description', 'Software Developer in Laravel PHP')
@@ -191,7 +190,7 @@ class HeroTest extends TestCase
         Livewire::test(Info::class)
             ->set('info.title', 'My super title')
             ->set('info.description', 'My super description')
-            ->set('imageFile', UploadedFile::fake()->image('myimagexd.jpg', 1025)->size(1025))
+            ->set('imageFile', UploadedFile::fake()->image('myimagexd.jpg')->size(1025))
             ->call('edit')
             ->assertHasErrors(['imageFile' => 'max']);
     }

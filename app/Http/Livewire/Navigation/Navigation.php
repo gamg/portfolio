@@ -12,7 +12,7 @@ class Navigation extends Component
     use Slideover;
     use Notification;
 
-    public $items = null;
+    public $items;
 
     protected $listeners = ['itemAdded' => 'updateDataAfterAddItem', 'deleteItem'];
 

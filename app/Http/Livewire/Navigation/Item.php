@@ -9,6 +9,7 @@ use Livewire\Component;
 class Item extends Component
 {
     use Notification;
+
     public Navitem $item;
 
     protected $rules = [
