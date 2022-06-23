@@ -35,7 +35,7 @@ class Project extends Component
 
     public function loadProject(ProjectModel $project, $modal = true)
     {
-        if ($this->currentProject->isNot($project)){
+        if ($this->currentProject->isNot($project)) {
             $this->currentProject = $project;
             $this->reset('imageFile');
         }

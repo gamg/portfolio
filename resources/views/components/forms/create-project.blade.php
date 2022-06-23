@@ -3,14 +3,14 @@
         <div>
             <x-inputs.label for="name" value="Name" />
 
-            <x-inputs.text wire:model.defer="currentProject.name" id="name" class="block mt-1 w-full" type="text" required />
+            <x-inputs.text wire:model.defer="currentProject.name" id="name" type="text" required />
 
             @error("currentProject.name")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
         <div class="mt-3">
             <x-inputs.label for="projectDescription" value="Description" />
 
-            <x-inputs.textarea wire:model.defer="currentProject.description" id="projectDescription" class="block mt-1 w-full" type="text" required />
+            <x-inputs.textarea wire:model.defer="currentProject.description" id="projectDescription" required />
 
             @error("currentProject.description")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
@@ -28,14 +28,14 @@
         <div class="mt-4">
             <x-inputs.label for="video_link" value="Video Link" />
 
-            <x-inputs.text wire:model.defer="currentProject.video_link" id="video_link" class="block mt-1 w-full" type="text" />
+            <x-inputs.text wire:model.defer="currentProject.video_link" id="video_link" type="text" />
 
             @error("currentProject.video_link")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
         <div class="mt-3">
             <x-inputs.label for="url" value="Url" />
 
-            <x-inputs.text wire:model.defer="currentProject.url" id="url" class="block mt-1 w-full" type="text" />
+            <x-inputs.text wire:model.defer="currentProject.url" id="url" type="text" />
 
             @error("currentProject.url")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>

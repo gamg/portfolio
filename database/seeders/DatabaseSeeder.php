@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\SocialLink;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -43,5 +44,17 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Project::factory(3)->create();
+
+        SocialLink::factory()->create([
+            'name' => 'Twitter',
+            'url' => 'https://twitter.com/gamg_',
+            'icon' => 'fa-brands fa-twitter',
+        ]);
+
+        SocialLink::factory()->create([
+            'name' => 'Youtube',
+            'url' => 'https://www.youtube.com/channel/UCAhUwzPtyWu7Bj5vmjq9YEA',
+            'icon' => 'fa-brands fa-youtube',
+        ]);
     }
 }

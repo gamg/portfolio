@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Traits;
 
+use App\Models\SocialLink as SocialLinkModel;
+
 trait Slideover
 {
     public $openSlideover = false;
