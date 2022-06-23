@@ -35,28 +35,7 @@
 
         <livewire:contact.social-link/>
 
-        <nav class="flex flex-wrap justify-center -mx-5 -my-2">
-            <div class="px-5 py-2">
-                <a href="#" class="flex text-base leading-6 text-gray-400 hover:text-red-400">
-                    Hello
-                </a>
-            </div>
-            <div class="px-5 py-2">
-                <a href="#" class="flex text-base leading-6 text-gray-400 hover:text-red-400">
-                    Projects
-                </a>
-            </div>
-            <div class="px-5 py-2">
-                <a href="#" class="flex text-base leading-6 text-gray-400 hover:text-red-400">
-                    Contact me
-                </a>
-            </div>
-            <div class="px-5 py-2">
-                <a href="#" class="flex text-base leading-6 text-gray-400 hover:text-red-400">
-                    Es/En
-                </a>
-            </div>
-        </nav>
+        <livewire:navigation.footer-link/>
     </div>
 </section>
 </x-main-layout>
