@@ -1,4 +1,4 @@
-<div class="px-5 py-2">
+<div class="px-5 py-2" id="contact-me">
     @if($contact->email)
         <a href="mailto:{{ $contact->email }}" class="flex text-base leading-6 text-gray-400 hover:text-red-400 space-y-1">
             <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

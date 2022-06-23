@@ -9,8 +9,7 @@ use Livewire\Component;
 
 class Navigation extends Component
 {
-    use Slideover;
-    use Notification;
+    use Slideover, Notification;
 
     public $items;
 
@@ -47,6 +46,7 @@ class Navigation extends Component
     public function deleteItem(Navitem $item)
     {
         $item->delete();
+        $this->emitTo('navigation.footer-link','updatedItems');
         $this->mount();
         $this->notify('Menu item has been deleted.', 'deleteMessage');
     }

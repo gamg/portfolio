@@ -20,6 +20,14 @@
             <x-button>Create</x-button>
         </div>
     </form>
+    <div class="text-sm text-gray-500 mt-6">
+        <h3>These are the static links for the 3 sections of portfolio (Home, Projects and Contact):</h3>
+        <ul class="mt-4">
+            <li>#hello</li>
+            <li>#projects</li>
+            <li>#contact-me</li>
+        </ul>
+    </div>
 </div>
 
 
