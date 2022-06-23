@@ -15,6 +15,7 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}?cvbb" defer></script>
+        <script src="https://kit.fontawesome.com/1bf067c1d8.js" crossorigin="anonymous"></script>
         <script src="https://cdn.tailwindcss.com"></script>
         @livewireStyles
     </head>

@@ -3,7 +3,7 @@
         <div>
             <x-inputs.label for="label" value="Label" />
 
-            <x-inputs.text wire:model.defer="item.label" id="label" class="block mt-1 w-full" type="text" required />
+            <x-inputs.text wire:model.defer="item.label" id="label" type="text" required />
 
             @error('item.label')<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
@@ -11,7 +11,7 @@
         <div class="mt-4">
             <x-inputs.label for="link" value="Link" />
 
-            <x-inputs.text wire:model.defer="item.link" id="link" class="block mt-1 w-full" type="text" required />
+            <x-inputs.text wire:model.defer="item.link" id="link" type="text" required />
 
             @error('item.link')<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>

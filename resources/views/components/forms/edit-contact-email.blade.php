@@ -3,7 +3,7 @@
         <div>
             <x-inputs.label for="email" value="Email Address" />
 
-            <x-inputs.text wire:model.defer="contact.email" id="email" class="block mt-1 w-full" type="email" required/>
+            <x-inputs.text wire:model.defer="contact.email" id="email" type="email" required/>
 
             @error("contact.email")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>

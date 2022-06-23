@@ -6,14 +6,14 @@
                 <div>
                     <x-inputs.label for="label" value="Label" />
 
-                    <x-inputs.text wire:model.defer="items.{{ $index }}.label" id="label" class="block mt-1 w-full" type="text" required />
+                    <x-inputs.text wire:model.defer="items.{{ $index }}.label" id="label" type="text" required />
 
                     @error("items.$index.label")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
                 </div>
                 <div class="mt-3">
                     <x-inputs.label for="link" value="Link" />
 
-                    <x-inputs.text wire:model.defer="items.{{ $index }}.link" id="link" class="block mt-1 w-full" type="text" required />
+                    <x-inputs.text wire:model.defer="items.{{ $index }}.link" id="link" type="text" required />
 
                     @error("items.$index.link")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
                 </div>

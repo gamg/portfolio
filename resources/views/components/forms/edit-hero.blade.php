@@ -3,14 +3,14 @@
         <div>
             <x-inputs.label for="title" value="Title" />
 
-            <x-inputs.text wire:model.defer="info.title" id="title" class="block mt-1 w-full" type="text" required />
+            <x-inputs.text wire:model.defer="info.title" id="title" type="text" required />
 
             @error("info.title")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
         <div class="mt-3">
             <x-inputs.label for="description" value="Description" />
 
-            <x-inputs.textarea wire:model.defer="info.description" id="description" class="block mt-1 w-full" type="text" required />
+            <x-inputs.textarea wire:model.defer="info.description" id="description" type="text" required />
 
             @error("info.description")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
