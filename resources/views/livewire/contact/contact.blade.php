@@ -7,9 +7,9 @@
             <span class="pl-3 text-lg">{{ $contact->email }}</span>
         </a>
     @else
-        <h3 class="text-gray-400">There is no contact email to show!</h3>
+        <h3 class="text-gray-400">{{ __('There is no contact email to show!') }}</h3>
     @endif
-    <x-actions.action wire:click.prevent="openSlide" title="Edit" class="flex items-center justify-center px-8 md:px-10 text-yellow-300 hover:text-blue-300">
+    <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}" class="flex items-center justify-center px-8 md:px-10 text-yellow-300 hover:text-blue-300">
         <x-icons.edit/>
     </x-actions.action>
 

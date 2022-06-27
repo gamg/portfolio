@@ -5,13 +5,13 @@
             <i class="{{ $socialLink->icon }}"></i>
         </a>
     @empty
-        <h3 class="text-gray-400">There is no social links to show!</h3>
+        <h3 class="text-gray-400">{{ __('There is no social links to show!') }}</h3>
     @endforelse
     <div class="flex items-center space-x-2">
-        <x-actions.action wire:click.prevent="create" title="New" class="text-yellow-300 hover:text-blue-300">
+        <x-actions.action wire:click.prevent="create" title="{{ __('New') }}" class="text-yellow-300 hover:text-blue-300">
             <x-icons.add/>
         </x-actions.action>
-        <x-actions.action wire:click.prevent="openSlide" title="Edit" class="text-yellow-300 hover:text-blue-300">
+        <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}" class="text-yellow-300 hover:text-blue-300">
             <x-icons.edit/>
         </x-actions.action>
     </div>

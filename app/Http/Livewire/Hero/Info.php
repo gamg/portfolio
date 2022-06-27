@@ -59,7 +59,7 @@ class Info extends Component
         }
 
         $this->resetExcept('info');
-        $this->notify('Information saved successfully!');
+        $this->notify(__('Information saved successfully!'));
     }
 
     public function render()

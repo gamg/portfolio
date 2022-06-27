@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Traits;
 
+use App\Models\Navitem;
 use App\Models\SocialLink as SocialLinkModel;
 
 trait Slideover
