@@ -29,7 +29,7 @@ class Item extends Component
         $this->emitTo('navigation.navigation','itemAdded');
         $this->emitTo('navigation.footer-link','updatedItems');
         $this->mount();
-        $this->notify('Item created successfully!');
+        $this->notify(__('Item created successfully!'));
     }
 
     public function render()

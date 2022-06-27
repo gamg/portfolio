@@ -1,6 +1,6 @@
 <form wire:submit.prevent="save">
     <div>
-        <x-inputs.label for="socialLinkName" value="Name" />
+        <x-inputs.label for="socialLinkName" value="{{ __('Name') }}" />
 
         <x-inputs.text wire:model.defer="socialLink.name" id="socialLinkName" type="text" required />
 
@@ -8,7 +8,7 @@
     </div>
 
     <div class="mt-4">
-        <x-inputs.label for="socialLinkUrl" value="URL" />
+        <x-inputs.label for="socialLinkUrl" value="{{ __('Url') }}" />
 
         <x-inputs.text wire:model.defer="socialLink.url" id="socialLinkUrl" type="text" required />
 
@@ -16,7 +16,7 @@
     </div>
 
     <div class="mt-4">
-        <x-inputs.label for="icon" value="Font Awesome Icon"/>
+        <x-inputs.label for="icon" value="{{ __('Font Awesome Icon') }}"/>
 
         <x-inputs.text wire:model.defer="socialLink.icon" id="icon" placeholder="fa-brands fa-twitter" type="text"/>
 

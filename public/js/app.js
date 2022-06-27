@@ -5095,12 +5095,10 @@ var GeneralSwal = Swal.mixin({
   }
 });
 var DeleteConfirmSwal = Swal.mixin({
-  text: "You won't be able to revert this!",
   icon: 'warning',
   showCancelButton: true,
   confirmButtonColor: '#3f3f46',
-  cancelButtonColor: '#ef4444',
-  confirmButtonText: 'Yes, delete it!'
+  cancelButtonColor: '#ef4444'
 });
 /* Events */
 
@@ -5112,7 +5110,10 @@ window.addEventListener('notify', function (event) {
 });
 window.addEventListener('deleteit', function (event) {
   DeleteConfirmSwal.fire({
-    title: 'Are you sure?'
+    title: event.detail.title,
+    text: event.detail.text,
+    confirmButtonText: event.detail.confirmText,
+    cancelButtonText: event.detail.cancelText
   }).then(function (result) {
     if (result.isConfirmed) {
       Livewire.emit(event.detail.eventName, event.detail.id);
@@ -5123,8 +5124,7 @@ window.addEventListener('deleteMessage', function (event) {
   Swal.fire({
     confirmButtonColor: '#3f3f46',
     icon: 'success',
-    title: 'Deleted!',
-    text: event.detail.message
+    title: event.detail.message
   });
 });
 

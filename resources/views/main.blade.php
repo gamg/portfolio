@@ -26,7 +26,7 @@
 <!-- Footer -->
 <section class="bg-gray-800">
     <div class="flex justify-center pt-10">
-        <h2 class="text-2xl font-extrabold text-gray-200">Contact me here</h2>
+        <h2 class="text-2xl font-extrabold text-gray-200">{{ __('Contact me here') }}</h2>
     </div>
     <div class="max-w-screen-xl px-4 py-3 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <nav class="flex flex-wrap justify-center -mx-5 -my-2">

@@ -18,13 +18,12 @@ const GeneralSwal = Swal.mixin({
         toast.addEventListener('mouseleave', Swal.resumeTimer)
     }
 });
+
 const DeleteConfirmSwal = Swal.mixin({
-    text: "You won't be able to revert this!",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3f3f46',
-    cancelButtonColor: '#ef4444',
-    confirmButtonText: 'Yes, delete it!'
+    cancelButtonColor: '#ef4444'
 });
 
 /* Events */
@@ -36,7 +35,10 @@ window.addEventListener('notify', event => {
 });
 window.addEventListener('deleteit', event => {
     DeleteConfirmSwal.fire({
-        title: 'Are you sure?',
+        title: event.detail.title,
+        text: event.detail.text,
+        confirmButtonText: event.detail.confirmText,
+        cancelButtonText: event.detail.cancelText
     }).then((result) => {
         if (result.isConfirmed) {
             Livewire.emit(event.detail.eventName, event.detail.id)
@@ -47,7 +49,6 @@ window.addEventListener('deleteMessage', event => {
     Swal.fire({
         confirmButtonColor: '#3f3f46',
         icon: 'success',
-        title: 'Deleted!',
-        text: event.detail.message
+        title: event.detail.message,
     });
 });

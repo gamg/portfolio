@@ -27,7 +27,7 @@ class Contact extends Component
         $this->contact->save();
 
         $this->reset('openSlideover');
-        $this->notify('Contact email updated successfully!');
+        $this->notify(__('Contact email updated successfully!'));
     }
 
     public function render()

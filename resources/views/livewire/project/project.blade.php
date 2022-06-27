@@ -1,7 +1,7 @@
 <div class="max-w-2xl mx-auto py-16 sm:py-24 lg:max-w-none">
     <div class="flex items-center">
-        <h2 class="text-2xl font-extrabold text-gray-900 mr-5" id="projects">Projects</h2>
-        <x-actions.action wire:click.prevent="create" title="New Project" class="text-gray-800 hover:text-gray-600">
+        <h2 class="text-2xl font-extrabold text-gray-900 mr-5" id="{{ __('projects') }}">{{ __('Projects') }}</h2>
+        <x-actions.action wire:click.prevent="create" title="{{ __('New Project') }}" class="text-gray-800 hover:text-gray-600">
             <x-icons.add/>
         </x-actions.action>
     </div>
@@ -17,25 +17,23 @@
                     <a href="#" wire:click.prevent="loadProject({{ $project->id }})">{{ $project->name }}</a>
                 </h3>
                 <div class="flex items-center" x-data>
-                    <x-actions.action wire:click.prevent="loadProject({{ $project->id }}, false)" title="Edit" class="text-gray-800 hover:text-gray-600">
+                    <x-actions.action wire:click.prevent="loadProject({{ $project->id }}, false)" title="{{ __('Edit') }}" class="text-gray-800 hover:text-gray-600">
                         <x-icons.edit/>
                     </x-actions.action>
-                    <x-actions.action @click.prevent="$dispatch('deleteit', { eventName: 'deleteProject', id: {{ $project->id }} })" title="Delete" class="text-red-600 hover:text-red-400">
-                        <x-icons.delete/>
-                    </x-actions.action>
+                    <x-actions.delete eventName="deleteProject" :object="$project"/>
                 </div>
             </div>
         @empty
-            <h3>There are no projects to show!</h3>
+            <h3>{{ __('There are no projects to show!') }}</h3>
         @endforelse
     </div>
 
     <div class="flex justify-center mt-8 items-center space-x-2">
         @if($count < $this->total)
-            <button wire:click="showMore" type="button" class="px-3 py-3 border rounded bg-gray-800 text-white hover:border-red-600 hover:bg-red-400">Show more</button>
+            <button wire:click="showMore" type="button" class="px-3 py-3 border rounded bg-gray-800 text-white hover:border-red-600 hover:bg-red-400">{{ __('Show more') }}</button>
         @endif
         @if($count > 3)
-            <a href="#" wire:click.prevent="showLess" class="text-sm text-gray-800 hover:text-gray-600" target="_blank">Show less</a>
+            <a href="#" wire:click.prevent="showLess" class="text-sm text-gray-800 hover:text-gray-600" target="_blank">{{ __('Show less') }}</a>
         @endif
     </div>
 
@@ -66,7 +64,7 @@
                             </div>
                             <div class="flex mt-2">
                                 @if($currentProject->url)
-                                    <a href="{{ $currentProject->url }}" class="text-gray-800 hover:text-gray-600" title="See live project" target="_blank">
+                                    <a href="{{ $currentProject->url }}" class="text-gray-800 hover:text-gray-600" title="{{ __('See live project') }}" target="_blank">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                         </svg>
@@ -77,7 +75,7 @@
                     </div>
                     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                         <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-gray-800 text-base font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" @click="open = false">
-                            Close
+                            {{ __('Close') }}
                         </button>
                     </div>
                 </div>

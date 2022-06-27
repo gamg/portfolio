@@ -56,7 +56,7 @@ class SocialLink extends Component
         $this->socialLink->save();
         $this->mount();
         $this->reset(['openSlideover', 'socialLinkSelected']);
-        $this->notify('Social link saved successfully!');
+        $this->notify(__('Social link saved successfully!'));
     }
 
     public function deleteSocialLink()
@@ -64,7 +64,7 @@ class SocialLink extends Component
         $this->socialLink->delete();
         $this->reset('socialLinkSelected');
         $this->mount();
-        $this->notify('Social link has been deleted.', 'deleteMessage');
+        $this->notify(__('Social link has been deleted.'), 'deleteMessage');
     }
 
     public function render()

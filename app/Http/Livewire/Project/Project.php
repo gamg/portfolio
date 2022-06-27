@@ -70,7 +70,7 @@ class Project extends Component
 
         $this->mount();
         $this->reset(['imageFile', 'openSlideover']);
-        $this->notify('Project saved successfully!');
+        $this->notify(__('Project saved successfully!'));
     }
 
     public function deleteProject(ProjectModel $project)
@@ -78,7 +78,7 @@ class Project extends Component
         $this->deleteFile('projects', $project->image);
         $project->delete();
         $this->fillProjects();
-        $this->notify('Project has been deleted.', 'deleteMessage');
+        $this->notify(__('Project has been deleted.'), 'deleteMessage');
     }
 
     public function render()
