@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\SocialLink;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
          \App\Models\User::factory()->create([
              'name' => 'Gustavo',
              'email' => 'adolfz10@gmail.com',
+             'password' => Hash::make('*77.Carlotaz.77*'),
          ]);
 
          \App\Models\Navitem::factory()->create([
