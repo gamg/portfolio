@@ -7,20 +7,23 @@
     @empty
         <h3 class="text-gray-400">{{ __('There is no social links to show!') }}</h3>
     @endforelse
-    <div class="flex items-center space-x-2">
-        <x-actions.action wire:click.prevent="create" title="{{ __('New') }}" class="text-yellow-300 hover:text-blue-300">
-            <x-icons.add/>
-        </x-actions.action>
-        <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}" class="text-yellow-300 hover:text-blue-300">
-            <x-icons.edit/>
-        </x-actions.action>
-    </div>
 
-    <x-modals.slideover>
-        @if($addNewItem)
-            <x-forms.create-social-links/>
-        @else
-            <x-forms.edit-social-links :socialLinks="$socialLinks" :socialLinkSelected="$socialLinkSelected"/>
-        @endif
-    </x-modals.slideover>
+    @auth
+        <div class="flex items-center space-x-2">
+            <x-actions.action wire:click.prevent="create" title="{{ __('New') }}" class="text-yellow-300 hover:text-blue-300">
+                <x-icons.add/>
+            </x-actions.action>
+            <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}" class="text-yellow-300 hover:text-blue-300">
+                <x-icons.edit/>
+            </x-actions.action>
+        </div>
+
+        <x-modals.slideover>
+            @if($addNewItem)
+                <x-forms.create-social-links/>
+            @else
+                <x-forms.edit-social-links :socialLinks="$socialLinks" :socialLinkSelected="$socialLinkSelected"/>
+            @endif
+        </x-modals.slideover>
+    @endauth
 </div>
