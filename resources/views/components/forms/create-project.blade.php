@@ -23,6 +23,10 @@
                 </span>
             </x-inputs.img>
 
+            <div wire:loading wire:target="imageFile" class="mt-1 w-full text-indigo-700">
+                {{__('Verifying file...')}}
+            </div>
+
             @error("imageFile")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
         <div class="mt-4">
