@@ -19,8 +19,8 @@ class Image extends Component
 
     public function getImageUrlProperty()
     {
-        $image = $this->info->only('image')['image'] ?? 'default-hero.jpg';
-        return Storage::disk('hero')->url($image);
+        $image = $this->info->only('image')['image'] ?? 'hero/default-hero.jpg';
+        return Storage::disk('google')->url($image);
     }
 
     public function render()

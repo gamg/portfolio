@@ -38,7 +38,7 @@ class Info extends Component
 
     public function download()
     {
-        return Storage::disk('cv')->download($this->info->cv ?? 'my-cv.pdf');
+        return Storage::disk('google')->download($this->info->cv ?? 'cv/my-cv.pdf');
     }
 
     public function edit()
@@ -48,13 +48,13 @@ class Info extends Component
         $this->info->save();
 
         if ($this->cvFile) {
-            $this->deleteFile('cv', $this->info->cv);
-            $this->info->update(['cv' => $this->cvFile->store('/', 'cv')]);
+            $this->deleteFile('google', $this->info->cv);
+            $this->info->update(['cv' => $this->cvFile->store('cv', 'google')]);
         }
 
         if ($this->imageFile) {
-            $this->deleteFile('hero', $this->info->image);
-            $this->info->update(['image' => $this->imageFile->store('/', 'hero')]);
+            $this->deleteFile('google', $this->info->image);
+            $this->info->update(['image' => $this->imageFile->store('hero', 'google')]);
             $this->emitTo('hero.image','heroImageUpdated');
         }
 

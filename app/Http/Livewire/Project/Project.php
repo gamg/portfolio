@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Project;
 
+use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Project as ProjectModel;
@@ -62,8 +63,8 @@ class Project extends Component
         $this->validate();
 
         if ($this->imageFile) {
-            $this->deleteFile('projects', $this->currentProject->image); // if there is an old image
-            $this->currentProject->image = $this->imageFile->store('/', 'projects');
+            $this->deleteFile('google', $this->currentProject->image); // if there is an old image
+            $this->currentProject->image = $this->imageFile->store('projects', 'google');
         }
 
         $this->currentProject->save();
@@ -75,7 +76,7 @@ class Project extends Component
 
     public function deleteProject(ProjectModel $project)
     {
-        $this->deleteFile('projects', $project->image);
+        $this->deleteFile('google', $project->image);
         $project->delete();
         $this->fillProjects();
         $this->notify(__('Project has been deleted.'), 'deleteMessage');

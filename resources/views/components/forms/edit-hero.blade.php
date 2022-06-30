@@ -20,6 +20,10 @@
             <x-inputs.file wire:model="cvFile" id="cv" class="block mt-1 w-full" type="file"/>
             <a href="{{ $info->cvUrl }}" class="text-gray-400 text-sm hover:text-gray-700" target="_blank">{{__('Open Current File')}}</a>
 
+            <div wire:loading wire:target="cvFile" class="mt-1 w-full text-indigo-700">
+                {{__('Verifying file...')}}
+            </div>
+
             @error("cvFile")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
         <div class="mt-4">
@@ -30,6 +34,12 @@
                     <img src="{{ $imageFile ? $imageFile->temporaryUrl() : $info->imageUrl }}" alt="Hero Image">
                 </span>
             </x-inputs.img>
+
+{{--            <x-inputs.file wire:model="imageFile" id="image" class="block mt-1 w-full" type="file"/>--}}
+
+            <div wire:loading wire:target="imageFile" class="mt-1 w-full text-indigo-700">
+                {{__('Verifying file...')}}
+            </div>
 
             @error("imageFile")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>

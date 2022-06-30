@@ -16,7 +16,7 @@ class Project extends Model
     protected function imageUrl(): Attribute
     {
         return Attribute::make(
-            get: fn () => Storage::disk('projects')->url($this->image ?? 'default-img-project.jpg'),
+            get: fn () => Storage::disk('google')->url($this->image ?? 'projects/default-img-project.jpg'),
         );
     }
 

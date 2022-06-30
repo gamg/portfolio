@@ -16,14 +16,14 @@ class PersonalInformation extends Model
     protected function imageUrl(): Attribute
     {
         return Attribute::make(
-            get: fn () => Storage::disk('hero')->url($this->image ?? 'default-hero.jpg'),
+            get: fn () => Storage::disk('google')->url($this->image ?? 'hero/default-hero.jpg'),
         );
     }
 
     protected function cvUrl(): Attribute
     {
         return Attribute::make(
-            get: fn () => Storage::disk('cv')->url($this->cv ?? 'my-cv.pdf'),
+            get: fn () => Storage::disk('google')->url($this->cv ?? 'cv/my-cv.pdf'),
         );
     }
 }
