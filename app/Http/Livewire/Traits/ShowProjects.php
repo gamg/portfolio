@@ -31,6 +31,6 @@ trait ShowProjects
 
     public function fillProjects()
     {
-        $this->projects = ProjectModel::take($this->count)->get();
+        $this->projects = ProjectModel::take($this->count)->orderBy('id')->get();
     }
 }

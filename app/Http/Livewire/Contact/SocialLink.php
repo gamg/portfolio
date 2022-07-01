@@ -36,7 +36,7 @@ class SocialLink extends Component
 
     public function mount()
     {
-        $this->socialLinks = SocialLinkModel::get();
+        $this->socialLinks = SocialLinkModel::orderBy('id')->get();
         $this->socialLink = new SocialLinkModel();
     }
 
