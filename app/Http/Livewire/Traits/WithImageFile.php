@@ -11,7 +11,7 @@ trait WithImageFile
 
     public function updatedImageFile()
     {
-        $this->verifyTemporaryUrl();
+        //$this->verifyTemporaryUrl();
 
         $this->validate([
             'imageFile' => 'image|max:1024',
