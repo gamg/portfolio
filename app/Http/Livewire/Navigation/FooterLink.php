@@ -13,7 +13,7 @@ class FooterLink extends Component
 
     public function mount()
     {
-        $this->items = Navitem::orderBy('id')->all();
+        $this->items = Navitem::orderBy('id')->get();
     }
 
     public function updatedItems()
