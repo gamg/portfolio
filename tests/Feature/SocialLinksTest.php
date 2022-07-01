@@ -39,20 +39,20 @@ class SocialLinksTest extends TestCase
 
         Livewire::actingAs($user)->test(SocialLink::class)
             ->assertStatus(200)
-            ->assertSee('Edit')
-            ->assertSee('New');
+            ->assertSee(__('Edit'))
+            ->assertSee(__('New'));
     }
 
     /** @test  */
-    /*public function test_guests_cannot_see_navigation_actions()
+    public function test_guests_cannot_see_navigation_actions()
     {
         Livewire::test(SocialLink::class)
             ->assertStatus(200)
-            ->assertDontSee('Edit')
-            ->assertDontSee('New');
+            ->assertDontSee(__('Edit'))
+            ->assertDontSee(__('New'));
 
         $this->assertGuest();
-    }*/
+    }
 
     /** @test  */
     public function test_admin_can_add_a_social_link()

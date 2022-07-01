@@ -55,18 +55,18 @@ class HeroTest extends TestCase
         $user = User::factory()->create();
         Livewire::actingAs($user)->test(Info::class)
             ->assertStatus(200)
-            ->assertSee('Edit');
+            ->assertSee(__('Edit'));
     }
 
     /** @test  */
-    /*public function test_guests_cannot_see_hero_action()
+    public function test_guests_cannot_see_hero_action()
     {
         Livewire::test(Info::class)
             ->assertStatus(200)
-            ->assertDontSee('Edit');
+            ->assertDontSee(__('Edit'));
 
         $this->assertGuest();
-    }*/
+    }
 
     /** @test  */
     public function test_admin_can_edit_hero()

@@ -36,18 +36,18 @@ class ContactTest extends TestCase
 
         Livewire::actingAs($user)->test(Contact::class)
             ->assertStatus(200)
-            ->assertSee('Edit');
+            ->assertSee(__('Edit'));
     }
 
     /** @test  */
-    /*public function test_guests_cannot_see_contact_action()
+    public function test_guests_cannot_see_contact_action()
     {
         Livewire::test(Contact::class)
             ->assertStatus(200)
-            ->assertDontSee('Edit');
+            ->assertDontSee(__('Edit'));
 
         $this->assertGuest();
-    }*/
+    }
 
     /** @test  */
     public function test_admin_can_edit_contact_email()

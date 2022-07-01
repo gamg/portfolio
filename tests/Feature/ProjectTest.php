@@ -61,22 +61,24 @@ class ProjectTest extends TestCase
 
         Livewire::actingAs($user)->test(Project::class)
             ->assertStatus(200)
-            ->assertSee('New Project')
-            ->assertSee('Edit')
-            ->assertSee('Delete');
+            ->assertSee(__('New Project'))
+            ->assertSee(__('Edit'))
+            ->assertSee(__('Delete'));
     }
 
     /** @test  */
-    /*public function test_guests_cannot_see_projects_actions()
+    public function test_guests_cannot_see_projects_actions()
     {
+        ProjectModel::factory(3)->create();
+
         Livewire::test(Project::class)
             ->assertStatus(200)
-            ->assertDontSee('Edit')
-            ->assertDontSee('New')
-            ->assertSee('Delete');
+            ->assertDontSee(__('Edit'))
+            ->assertDontSee(__('New Project'))
+            ->assertDontSee(__('Delete'));
 
         $this->assertGuest();
-    }*/
+    }
 
     /** @test  */
     public function test_admin_can_add_a_project()
