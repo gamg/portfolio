@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="px-2 pt-2 pb-3 space-y-1">
-                    <x-navigation.links class="block px-3 py-2 rounded-md text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50" extraStyles="block px-3 py-2 rounded-md text-base hover:bg-gray-50" :items="$items"/>
+                    <x-navigation.links class="block px-3 py-2 rounded-md text-base text-gray-700 hover:text-gray-900 hover:bg-gray-50" :items="$items"/>
                     @auth
                         <x-actions.action wire:click.prevent="openSlide" title="{{ __('Edit') }}" class="block px-2 text-yellow-500 hover:text-blue-500">
                             <x-icons.edit/>
