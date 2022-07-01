@@ -29,7 +29,7 @@
         <div class="mt-4">
             <x-inputs.label for="image" value="{{__('Image')}}" />
 
-            <x-inputs.file wire:model="imageFile" id="image" class="block mt-1 w-full" type="file"/>
+            <x-inputs.file wire:model.defer="imageFile" id="image" class="block mt-1 w-full" type="file"/>
 
             <div wire:loading wire:target="imageFile" class="mt-1 w-full text-indigo-700">
                 {{__('Verifying file...')}}
