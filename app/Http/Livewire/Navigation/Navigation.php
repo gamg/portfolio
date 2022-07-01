@@ -22,7 +22,7 @@ class Navigation extends Component
 
     public function mount()
     {
-        $this->items = Navitem::all();
+        $this->items = Navitem::get();
     }
 
     public function updateDataAfterAddItem()
