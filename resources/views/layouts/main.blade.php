@@ -11,11 +11,11 @@
         <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Aldrich" media="all">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ asset('css/app.css') }}?ss">
+        <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}?ss">
 
         <!-- Scripts -->
 
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ secure_asset('js/app.js') }}" defer></script>
         <script src="https://kit.fontawesome.com/1bf067c1d8.js" crossorigin="anonymous"></script>
 
 {{--        <script src="https://cdn.tailwindcss.com"></script>--}}
