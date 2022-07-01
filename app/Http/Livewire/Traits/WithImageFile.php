@@ -9,14 +9,14 @@ trait WithImageFile
 {
     public $imageFile = null;
 
-    public function updatedImageFile()
+    /*public function updatedImageFile()
     {
         //$this->verifyTemporaryUrl();
 
         $this->validate([
             'imageFile' => 'image|max:1024',
         ]);
-    }
+    }*/
 
     private function verifyTemporaryUrl()
     {
