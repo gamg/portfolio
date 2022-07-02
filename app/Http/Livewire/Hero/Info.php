@@ -24,12 +24,12 @@ class Info extends Component
         'imageFile' => 'nullable|image|max:1024',
     ];
 
-    /*public function updatedCvFile()
+    public function updatedCvFile()
     {
         $this->validate([
             'cvFile' => 'mimes:pdf|max:1024',
         ]);
-    }*/
+    }
 
     public function mount()
     {
