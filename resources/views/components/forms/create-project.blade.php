@@ -17,7 +17,11 @@
         <div class="mt-4">
             <x-inputs.label for="projectImage" value="{{ __('Image') }}" />
 
-            <x-inputs.file wire:model="imageFile" id="image" class="block mt-1 w-full" type="file"/>
+            <x-inputs.img wire:model="imageFile" id="projectImage">
+                <span class="w-24 rounded-lg overflow-hidden bg-gray-100">
+                    <img src="{{ $imageFile ? $imageFile->temporaryUrl() : $info->imageUrl }}" alt="Project Image">
+                </span>
+            </x-inputs.img>
 
             <div wire:loading wire:target="imageFile" class="mt-1 w-full text-indigo-700">
                 {{__('Verifying file...')}}
