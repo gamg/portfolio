@@ -19,7 +19,7 @@
 
             <x-inputs.img wire:model="imageFile" id="projectImage">
                 <span class="w-24 rounded-lg overflow-hidden bg-gray-100">
-                    <img src="{{ $imageFile ? $imageFile->temporaryUrl() : $info->imageUrl }}" alt="Project Image">
+                    <img src="{{ $imageFile ? $imageFile->temporaryUrl() : $currentProject->imageUrl }}" alt="Project Image">
                 </span>
             </x-inputs.img>
 
