@@ -41,11 +41,17 @@ class DatabaseSeeder extends Seeder
             'title' => 'Gustavo Meza',
             'description' => 'Web Developer, Laravel PHP blablabla ..........',
             'cv' => null,
-            'image' => null,
+            'image' => 'hero/8t0S6GsG4ZCT62hZi6NrLXZvCAkgr7qSRtCZvGal.jpg',
             'email' => 'adolfz10@gmail.com',
         ]);
 
-        \App\Models\Project::factory(3)->create();
+        \App\Models\Project::factory()->create([
+            'image' => 'projects/QRl57qydxDiPFEHkWI14PUySrrr8kh63x9YfKd5j.jpg'
+        ]);
+
+        \App\Models\Project::factory()->create([
+            'image' => 'projects/tj4cv9QduwL4C8G3F59boKatY9Ib9PCgF7KF0qgs.jpg'
+        ]);
 
         SocialLink::factory()->create([
             'name' => 'Twitter',
