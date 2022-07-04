@@ -191,7 +191,7 @@ class ProjectTest extends TestCase
     }
 
     /** @test  */
-    public function test_description_must_have_a_maximum_of_two_hundred_fifty_characters()
+    public function test_description_must_have_a_maximum_of_four_hundred_fifty_characters()
     {
         Livewire::test(Project::class)
             ->set('currentProject.name', 'hehehe')

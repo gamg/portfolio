@@ -21,7 +21,7 @@ class Project extends Component
 
     protected $rules = [
         'currentProject.name' => 'required|max:100',
-        'currentProject.description' => 'required|max:250',
+        'currentProject.description' => 'required|max:450',
         'imageFile' => 'nullable|image|max:1024',
         'currentProject.video_link' => ['nullable', 'url', 'regex:/^(https|http):\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[A-z0-9-]+/i'],
         'currentProject.url' => 'nullable|url',
