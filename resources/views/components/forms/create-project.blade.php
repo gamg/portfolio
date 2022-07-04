@@ -43,6 +43,13 @@
 
             @error("currentProject.url")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
         </div>
+        <div class="mt-3">
+            <x-inputs.label for="repourl" value="{{ __('Repository Url') }}" />
+
+            <x-inputs.text wire:model.defer="currentProject.repo_url" id="repourl" type="text" />
+
+            @error("currentProject.repo_url")<div class="mt-1 text-red-600 text-sm">{{ $message }}</div>@enderror
+        </div>
         <div class="mt-4">
             <x-button>{{ __('Save') }}</x-button>
         </div>

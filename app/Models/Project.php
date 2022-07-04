@@ -11,7 +11,7 @@ class Project extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'image', 'video_link', 'url'];
+    protected $fillable = ['name', 'description', 'image', 'video_link', 'url', 'repo_url'];
 
     protected function imageUrl(): Attribute
     {

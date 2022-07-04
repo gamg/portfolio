@@ -22,6 +22,7 @@ class ProjectFactory extends Factory
             'image' => null,
             'video_link' => null,
             'url' => null,
+            'repo_url' => null,
         ];
     }
 }
