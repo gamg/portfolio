@@ -169,5 +169,7 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'repo_url' => 'Repository Url'
+    ],
 ];

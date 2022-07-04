@@ -25,6 +25,7 @@ class Project extends Component
         'imageFile' => 'nullable|image|max:1024',
         'currentProject.video_link' => ['nullable', 'url', 'regex:/^(https|http):\/\/(www\.)?(youtube\.com\/watch\?v=|youtu\.be\/)[A-z0-9-]+/i'],
         'currentProject.url' => 'nullable|url',
+        'currentProject.repo_url' => ['nullable', 'url', 'regex:/^(https|http):\/\/(www\.)?github\.com\/[A-z0-9-\/?=&]+/i'],
     ];
 
     public function mount()

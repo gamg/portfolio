@@ -792,5 +792,7 @@
     "Font Awesome Icon": "Icono de Font Awesome",
     "Social link saved successfully!": "Enlace social guardado exitosamente!",
     "Social link has been deleted.": "Enlace social ha sido eliminado.",
-    "Verifying file...": "Verificando archivo..."
+    "Verifying file...": "Verificando archivo...",
+    "Repository": "Repositorio",
+    "Repository Url": "Url de repositorio"
 }

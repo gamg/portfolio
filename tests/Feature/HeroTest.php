@@ -122,7 +122,7 @@ class HeroTest extends TestCase
     public function test_title_must_have_a_maximum_of_eighty_characters()
     {
         Livewire::test(Info::class)
-            ->set('info.title', 'abdcefghijklmnopqrstuabdcefghijklmnopqrst')
+            ->set('info.title', 'abdcefghijklmnopqrstuabdcefghijklmnopqrstabdcefghijklmnopqrstuabdcefghijklmnopqrs')
             ->set('info.description', 'My super description')
             ->call('edit')
             ->assertHasErrors(['info.title' => 'max']);
@@ -143,7 +143,7 @@ class HeroTest extends TestCase
     {
         Livewire::test(Info::class)
             ->set('info.title', 'My super title')
-            ->set('info.description', 'abdcefghijklmnopqrstuabdcefghimnoplqorstsdsdabdceghijklmnopqrstuabdcefghijklmnopqrstpabdcefghijklmcnopqrstuabdcefghijklmnopqrsthytrzxcvbnmlkj')
+            ->set('info.description', 'abdcefghijklmnopqrstuabdcefghimnoplqorstabdcabdcefghijklmnopqrstuabdcefghimnoplqorstsdsdabdceghijklmnopqrstuabdcefghijklmnopqefghijklmnopqrstuabdcefghimnoplqorstsdsdabdceghijklmnopqrstuabdcefghijklmnopqsdsdabdceghijklmnopqrstuabdcefghijklmnopqrstpabdcefghijklmcnopqrstuabdcefghijklmnopqrsthytrzxcvbnmlkj')
             ->call('edit')
             ->assertHasErrors(['info.description' => 'max']);
     }

@@ -43,6 +43,7 @@ class ProjectTest extends TestCase
             'image' => 'myproject.jpg',
             'video_link' => 'https://www.youtube.com/watch?v=K4TOrB7at0Y',
             'url' => 'https://www.cafedelprogramador.com/',
+            'repo_url' => 'https://github.com/gamg/portfolio',
         ]);
 
         Livewire::test(Project::class)
@@ -50,7 +51,8 @@ class ProjectTest extends TestCase
             ->assertSee($project->name)
             ->assertSee($project->description)
             ->assertSee($project->video_code)
-            ->assertSee($project->url);
+            ->assertSee($project->url)
+            ->assertSee($project->repo_url);
     }
 
     /** @test  */
@@ -91,6 +93,7 @@ class ProjectTest extends TestCase
             ->set('imageFile', $image)
             ->set('currentProject.video_link', 'https://www.youtube.com/watch?v=K4TOrB7at0Y')
             ->set('currentProject.url', 'https://www.cafedelprogramador.com/')
+            ->set('currentProject.repo_url', 'https://github.com/gamg/portfolio')
             ->call('save');
 
         $newProject = ProjectModel::first();
@@ -102,6 +105,7 @@ class ProjectTest extends TestCase
             'image' => $newProject->image,
             'video_link' => $newProject->video_link,
             'url' => $newProject->url,
+            'repo_url' => $newProject->repo_url,
         ]);
 
         Storage::disk('projects')->assertExists($newProject->image);
@@ -122,6 +126,7 @@ class ProjectTest extends TestCase
             ->set('imageFile', $img)
             ->set('currentProject.video_link', 'https://www.youtube.com/watch?v=K4TOrB7at0Y')
             ->set('currentProject.url', 'https://www.cafedelprogramador.com/')
+            ->set('currentProject.repo_url', 'https://github.com/gamg/portfolio')
             ->call('save');
 
         $project->refresh();
@@ -133,6 +138,7 @@ class ProjectTest extends TestCase
             'image' => $project->image,
             'video_link' => $project->video_link,
             'url' => $project->url,
+            'repo_url' => 'https://github.com/gamg/portfolio',
         ]);
 
         Storage::disk('projects')->assertExists($project->image);
@@ -195,7 +201,7 @@ class ProjectTest extends TestCase
     {
         Livewire::test(Project::class)
             ->set('currentProject.name', 'hehehe')
-            ->set('currentProject.description', 'abdcefghijklmnopqrstuabdcefghijklmnopqrstabdcefghijklmnopqrstuabdcefghijklmnopqrst123456789123456789abdcefghijklmnopqrstuabdcefghijklmnopqrstabdcefghijklmnopqrstuabdcefghijklmnopqrst123456789123456789abdcefghijklmnopqrstuabdcefghijklmnopqrstabdcefghij')
+            ->set('currentProject.description', 'abdcefghabdcefghijklmnopqrstuabdcefghijklmnopqrstabdcefghijklmnopqrstuabdcefghijklmnopqrst123456789123456789abdcefghijklmnopqrstuabdcefghijklmnopqrstabdcefghijklmnopqrstuabdcefghijklmnopqrst123456789123456789abdcefghijklmnopqrstuabdcefghijklmnopqrstabdcefghijijklmnopqrstuabdcefghijklmnopqrstabdcefghijklmnopqrstuabdcefghijklmnopqrst123456789123456789abdcefghijklmnopqrstuabdcefghijklmnopqrstabdcefghijklmnopqrstuabdcefghijklmnopqrst123456789123456789abdcefghijklmnopqrstuabdcefghijklmnopqrstabdcefghij')
             ->call('save')
             ->assertHasErrors(['currentProject.description' => 'max']);
     }
@@ -253,5 +259,27 @@ class ProjectTest extends TestCase
             ->set('currentProject.url', 'https:/www.google.com')
             ->call('save')
             ->assertHasErrors(['currentProject.url' => 'url']);
+    }
+
+    /** @test  */
+    public function test_repo_url_must_be_a_valid_url()
+    {
+        Livewire::test(Project::class)
+            ->set('currentProject.name', 'My super name')
+            ->set('currentProject.description', 'My super description')
+            ->set('currentProject.repo_url', 'htt://github.com/gamg/portfolio')
+            ->call('save')
+            ->assertHasErrors(['currentProject.repo_url' => 'url']);
+    }
+
+    /** @test  */
+    public function test_repo_url_must_match_with_regex()
+    {
+        Livewire::test(Project::class)
+            ->set('currentProject.name', 'My super name')
+            ->set('currentProject.description', 'My super description')
+            ->set('currentProject.repo_url', 'https://hello.com/gamg/portfolio')
+            ->call('save')
+            ->assertHasErrors(['currentProject.repo_url' => 'regex']);
     }
 }

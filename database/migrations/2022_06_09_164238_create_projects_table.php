@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('video_link')->nullable();
             $table->string('url')->nullable();
+            $table->string('repo_url')->nullable();
             $table->timestamps();
         });
     }
