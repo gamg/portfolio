@@ -18,8 +18,8 @@ class Info extends Component
     public $cvFile = null;
 
     protected $rules = [
-        'info.title' => 'required|max:40',
-        'info.description' => 'required|max:140',
+        'info.title' => 'required|max:80',
+        'info.description' => 'required|max:250',
         'cvFile' => 'nullable|mimes:pdf|max:1024',
         'imageFile' => 'nullable|image|max:1024',
     ];

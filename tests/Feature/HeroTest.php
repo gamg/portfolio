@@ -119,7 +119,7 @@ class HeroTest extends TestCase
     }
 
     /** @test  */
-    public function test_title_must_have_a_maximum_of_forty_characters()
+    public function test_title_must_have_a_maximum_of_eighty_characters()
     {
         Livewire::test(Info::class)
             ->set('info.title', 'abdcefghijklmnopqrstuabdcefghijklmnopqrst')
@@ -139,7 +139,7 @@ class HeroTest extends TestCase
     }
 
     /** @test  */
-    public function test_description_must_have_a_maximum_of_one_hundred_forty_characters()
+    public function test_description_must_have_a_maximum_of_two_hundred_fifty_characters()
     {
         Livewire::test(Info::class)
             ->set('info.title', 'My super title')
