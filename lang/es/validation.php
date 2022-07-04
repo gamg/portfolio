@@ -153,6 +153,7 @@ return [
         'imageFile'  => 'Archivo de Imagen',
         'name'  => 'Nombre',
         'video_link'  => 'Enlace del video',
-        'icon' => 'Icono'
+        'icon' => 'Icono',
+        'repo_url' => 'Url de repositorio'
     ],
 ];
