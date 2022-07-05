@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\PersonalInformation::factory()->create([
             'title' => 'Gustavo Meza',
             'description' => 'Web Developer, Laravel PHP blablabla ..........',
-            'cv' => null,
+            'cv' => 'cv/ZHNkcH9SiklDtLtNs99jOtGfRyp8oXEFEZ405c7Z.pdf',
             'image' => 'hero/8t0S6GsG4ZCT62hZi6NrLXZvCAkgr7qSRtCZvGal.jpg',
             'email' => 'adolfz10@gmail.com',
         ]);
